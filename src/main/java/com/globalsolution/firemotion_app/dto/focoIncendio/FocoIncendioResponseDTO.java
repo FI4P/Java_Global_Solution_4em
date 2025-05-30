@@ -2,8 +2,10 @@ package com.globalsolution.firemotion_app.dto.focoIncendio;
 
 import com.globalsolution.firemotion_app.domain.focoIncendio.FocoIncendioIntensidade;
 import com.globalsolution.firemotion_app.domain.focoIncendio.FocoIncendioStatus;
+import com.globalsolution.firemotion_app.dto.alerta.AlertaResponseDTO;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
-public record FocoIncendioResponseDTO(Long id, FocoIncendioIntensidade intensidade, FocoIncendioStatus status, String origem, Long localizacaoId, LocalDateTime createdAt) {
+public record FocoIncendioResponseDTO(Long id, FocoIncendioIntensidade intensidade, FocoIncendioStatus status, String origem, Long localizacaoId, LocalDateTime createdAt, List<AlertaResponseDTO> alertas) {
 }

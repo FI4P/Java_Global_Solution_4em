@@ -52,4 +52,9 @@ public class FocoIncendio {
     @OneToMany(mappedBy = "focoIncendio", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<RespostaIncendio> respostasIncendios;
 
+    public void addAlerta(Alerta alerta) {
+        alertas.add(alerta);
+        alerta.setFocoIncendio(this);
+    }
+
 }

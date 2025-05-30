@@ -42,5 +42,8 @@ public class Sensor {
     @OneToMany(mappedBy = "sensor", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<LeituraSensor> leituras = new ArrayList<>();
 
-
+    public void addAlerta(Alerta alerta) {
+        alertas.add(alerta);
+        alerta.setSensor(this);
+    }
 }

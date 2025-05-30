@@ -2,13 +2,16 @@ package com.globalsolution.firemotion_app.service.focoIncendio;
 
 import com.globalsolution.firemotion_app.domain.focoIncendio.FocoIncendio;
 import com.globalsolution.firemotion_app.domain.localizacao.Localizacao;
+import com.globalsolution.firemotion_app.dto.alerta.AlertaResponseDTO;
 import com.globalsolution.firemotion_app.dto.focoIncendio.FocoIncendioRequestDTO;
 import com.globalsolution.firemotion_app.dto.focoIncendio.FocoIncendioResponseDTO;
 import com.globalsolution.firemotion_app.repository.focoIncendio.FocoIncendioRepository;
 import com.globalsolution.firemotion_app.repository.localizacao.LocalizacaoRepository;
+import com.globalsolution.firemotion_app.service.alerta.AlertaService;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -16,14 +19,18 @@ public class FocoIncendioService {
 
     private final FocoIncendioRepository focoIncendioRepository;
     private final LocalizacaoRepository localizacaoRepository;
+    private final AlertaService alertaService;
 
-    public FocoIncendioService(FocoIncendioRepository focoIncendioRepository, LocalizacaoRepository localizacaoRepository) {
+    public FocoIncendioService(FocoIncendioRepository focoIncendioRepository, LocalizacaoRepository localizacaoRepository, AlertaService alertaService) {
         this.focoIncendioRepository = focoIncendioRepository;
         this.localizacaoRepository = localizacaoRepository;
+        this.alertaService = alertaService;
     }
 
     public FocoIncendioResponseDTO responseDTO(FocoIncendio focoIncendio) {
-        return new FocoIncendioResponseDTO(focoIncendio.getId(), focoIncendio.getIntensidade(),focoIncendio.getStatus(), focoIncendio.getOrigem(), focoIncendio.getLocalizacao().getId(), focoIncendio.getCreatedAt());
+        List<AlertaResponseDTO> alertasResponseDTO = focoIncendio.getAlertas() != null ? focoIncendio.getAlertas().stream().map(alertaService::responseDTO).toList() : new ArrayList<>();
+
+        return new FocoIncendioResponseDTO(focoIncendio.getId(), focoIncendio.getIntensidade(),focoIncendio.getStatus(), focoIncendio.getOrigem(), focoIncendio.getLocalizacao().getId(), focoIncendio.getCreatedAt(), alertasResponseDTO);
     }
 
 
@@ -40,6 +47,7 @@ public class FocoIncendioService {
         return responseDTO(focoIncendio);
 
     }
+
     public FocoIncendioResponseDTO save(FocoIncendioRequestDTO body) {
         Localizacao localizacao = localizacaoRepository.findById(body.localizacaoId()).orElseThrow(() -> new EntityNotFoundException("Localizacao não encontrada"));
 
