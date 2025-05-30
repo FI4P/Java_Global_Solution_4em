@@ -28,9 +28,11 @@ public class RespostaIncendio {
     @Column(nullable = false)
     private LocalDateTime createdAt;
 
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private RespostaIncendioAcao acao;
 
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private RespostaIncendioStatus status;
 

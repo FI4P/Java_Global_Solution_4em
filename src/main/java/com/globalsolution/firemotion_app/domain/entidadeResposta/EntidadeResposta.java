@@ -20,6 +20,7 @@ public class EntidadeResposta {
     @Column(nullable = false)
     private String nome;
 
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private EntidadeRespostaTipo tipo;
 

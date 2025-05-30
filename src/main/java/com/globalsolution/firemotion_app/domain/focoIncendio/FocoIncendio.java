@@ -31,12 +31,14 @@ public class FocoIncendio {
     @CreationTimestamp
     private LocalDateTime createdAt;
 
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private FocoIncendioIntensidade intensidade;
 
     @Column(nullable = false)
     private String origem;
 
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private FocoIncendioStatus status;
 

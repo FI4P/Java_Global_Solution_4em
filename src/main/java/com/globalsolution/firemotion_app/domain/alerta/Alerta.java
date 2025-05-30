@@ -27,6 +27,7 @@ public class Alerta {
     @Column(nullable = false)
     private String descricao;
 
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private AlertaNivelRisco nivelRisco;
 
