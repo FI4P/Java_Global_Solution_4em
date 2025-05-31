@@ -50,9 +50,7 @@ public class RespostaIncendioService {
 
         RespostaIncendio saved = respostaIncendioRepository.save(resposta);
 
-        return responseDTO(saved);
-
-
+        return responseDTO(sav
     }
 
     public  RespostaIncendioResponseDTO update(Long id, RespostaIncendioRequestDTO body){
