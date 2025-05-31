@@ -2,12 +2,15 @@ package com.globalsolution.firemotion_app.service.focoIncendio;
 
 import com.globalsolution.firemotion_app.domain.focoIncendio.FocoIncendio;
 import com.globalsolution.firemotion_app.domain.localizacao.Localizacao;
+import com.globalsolution.firemotion_app.domain.respostaIncendio.RespostaIncendio;
 import com.globalsolution.firemotion_app.dto.alerta.AlertaResponseDTO;
 import com.globalsolution.firemotion_app.dto.focoIncendio.FocoIncendioRequestDTO;
 import com.globalsolution.firemotion_app.dto.focoIncendio.FocoIncendioResponseDTO;
+import com.globalsolution.firemotion_app.dto.respostaIncendio.RespostaIncendioResponseDTO;
 import com.globalsolution.firemotion_app.repository.focoIncendio.FocoIncendioRepository;
 import com.globalsolution.firemotion_app.repository.localizacao.LocalizacaoRepository;
 import com.globalsolution.firemotion_app.service.alerta.AlertaService;
+import com.globalsolution.firemotion_app.service.respostaIncendio.RespostaIncendioService;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
 
@@ -20,17 +23,19 @@ public class FocoIncendioService {
     private final FocoIncendioRepository focoIncendioRepository;
     private final LocalizacaoRepository localizacaoRepository;
     private final AlertaService alertaService;
+    private final RespostaIncendioService respostaIncendioService;
 
-    public FocoIncendioService(FocoIncendioRepository focoIncendioRepository, LocalizacaoRepository localizacaoRepository, AlertaService alertaService) {
+    public FocoIncendioService(FocoIncendioRepository focoIncendioRepository, LocalizacaoRepository localizacaoRepository, AlertaService alertaService, RespostaIncendioService respostaIncendioService) {
         this.focoIncendioRepository = focoIncendioRepository;
         this.localizacaoRepository = localizacaoRepository;
         this.alertaService = alertaService;
+        this.respostaIncendioService = respostaIncendioService;
     }
 
     public FocoIncendioResponseDTO responseDTO(FocoIncendio focoIncendio) {
         List<AlertaResponseDTO> alertasResponseDTO = focoIncendio.getAlertas() != null ? focoIncendio.getAlertas().stream().map(alertaService::responseDTO).toList() : new ArrayList<>();
-
-        return new FocoIncendioResponseDTO(focoIncendio.getId(), focoIncendio.getIntensidade(),focoIncendio.getStatus(), focoIncendio.getOrigem(), focoIncendio.getLocalizacao().getId(), focoIncendio.getCreatedAt(), alertasResponseDTO);
+        List<RespostaIncendioResponseDTO> respostaIncendiosDTO = focoIncendio.getRespostasIncendios() != null ? focoIncendio.getRespostasIncendios().stream().map(respostaIncendioService::responseDTO).toList() : new ArrayList<>();
+        return new FocoIncendioResponseDTO(focoIncendio.getId(), focoIncendio.getIntensidade(),focoIncendio.getStatus(), focoIncendio.getOrigem(), focoIncendio.getLocalizacao().getId(), focoIncendio.getCreatedAt(), alertasResponseDTO,respostaIncendiosDTO);
     }
 
 

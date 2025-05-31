@@ -4,11 +4,13 @@ import com.globalsolution.firemotion_app.domain.localizacao.Localizacao;
 import com.globalsolution.firemotion_app.domain.sensor.Sensor;
 import com.globalsolution.firemotion_app.dto.alerta.AlertaResponseDTO;
 import com.globalsolution.firemotion_app.dto.leituraSensor.LeituraSensorRequestDTO;
+import com.globalsolution.firemotion_app.dto.leituraSensor.LeituraSensorResponseDTO;
 import com.globalsolution.firemotion_app.dto.sensor.SensorRequestDTO;
 import com.globalsolution.firemotion_app.dto.sensor.SensorResponseDTO;
 import com.globalsolution.firemotion_app.repository.localizacao.LocalizacaoRepository;
 import com.globalsolution.firemotion_app.repository.sensor.SensorRepository;
 import com.globalsolution.firemotion_app.service.alerta.AlertaService;
+import com.globalsolution.firemotion_app.service.leituraSensor.LeituraSensorService;
 import jakarta.persistence.EntityNotFoundException;
 
 import org.springframework.stereotype.Service;
@@ -22,17 +24,20 @@ public class SensorService {
     private final SensorRepository sensorRepository;
     private final LocalizacaoRepository localizacaoRepository;
     private final AlertaService alertaService;
+    private final LeituraSensorService leituraSensorService;
 
-    public SensorService(SensorRepository sensorRepository, LocalizacaoRepository localizacaoRepository, AlertaService alertaService) {
+    public SensorService(SensorRepository sensorRepository, LocalizacaoRepository localizacaoRepository, AlertaService alertaService, LeituraSensorService leituraSensorService) {
         this.sensorRepository = sensorRepository;
         this.localizacaoRepository = localizacaoRepository;
         this.alertaService = alertaService;
+        this.leituraSensorService = leituraSensorService;
     }
 
     public SensorResponseDTO responseDTO(Sensor sensor){
         List<AlertaResponseDTO> alertasResponseDTO = sensor.getAlertas() != null ? sensor.getAlertas().stream().map(alertaService::responseDTO).toList() : new ArrayList<>();
+        List<LeituraSensorResponseDTO> leiturasResponseDTO = sensor.getLeituras() != null ? sensor.getLeituras().stream().map(leituraSensorService::responseDTO).toList() : new ArrayList<>();
 
-        return  new SensorResponseDTO(sensor.getId(), sensor.getTipo(), sensor.getDescricao(), sensor.getLocalizacao().getRegiao(), alertasResponseDTO);
+        return  new SensorResponseDTO(sensor.getId(), sensor.getTipo(), sensor.getDescricao(), sensor.getLocalizacao().getRegiao(), alertasResponseDTO, leiturasResponseDTO);
     }
 
 

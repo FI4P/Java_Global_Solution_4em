@@ -56,7 +56,7 @@ public class RespostaIncendioService {
     }
 
     public  RespostaIncendioResponseDTO update(Long id, RespostaIncendioRequestDTO body){
-        RespostaIncendio respostaIncendio = respostaIncendioRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Não encontrado"));
+        RespostaIncendio respostaIncendio = respostaIncendioRepository.findById(id).orElseThr(() -> new EntityNotFoundException("Não encontrado"));
 
         respostaIncendio.setAcao(body.acao() != null ? body.acao() : respostaIncendio.getAcao());
         respostaIncendio.setStatus(body.status() != null ? body.status() : respostaIncendio.getStatus());

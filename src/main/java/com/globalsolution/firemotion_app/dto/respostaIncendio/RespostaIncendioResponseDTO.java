@@ -5,5 +5,5 @@ import com.globalsolution.firemotion_app.domain.respostaIncendio.RespostaIncendi
 
 import java.time.LocalDateTime;
 
-public record RespostaIncendioResponseDTO(Long id, Long focoIncendio, Long entidadeId, LocalDateTime createdAt, RespostaIncendioAcao acao, RespostaIncendioStatus status) {
+public record RespostaIncendioResponseDTO(Long id, Long focoIncendioId, Long entidadeId, LocalDateTime createdAt, RespostaIncendioAcao acao, RespostaIncendioStatus status) {
 }

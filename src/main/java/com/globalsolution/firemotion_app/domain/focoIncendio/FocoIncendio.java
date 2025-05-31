@@ -57,4 +57,9 @@ public class FocoIncendio {
         alerta.setFocoIncendio(this);
     }
 
+    public void addRespostaIncendio(RespostaIncendio respostaIncendio){
+        respostasIncendios.add(respostaIncendio);
+        respostaIncendio.setFocoIncendio(this);
+    }
+
 }

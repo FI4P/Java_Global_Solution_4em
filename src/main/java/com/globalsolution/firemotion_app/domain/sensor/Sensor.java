@@ -46,4 +46,9 @@ public class Sensor {
         alertas.add(alerta);
         alerta.setSensor(this);
     }
+
+    public void addLeitura(LeituraSensor leituraSensor) {
+        leituras.add(leituraSensor);
+        leituraSensor.setSensor(this);
+    }
 }
