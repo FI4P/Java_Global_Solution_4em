@@ -14,7 +14,7 @@ O **FireMonitor** tem como objetivo oferecer uma infraestrutura digital para:
 
 ## 🛠️ Tecnologias Utilizadas
 
-- Java 17
+- Java 21
 - Spring Boot
 - Spring Data JPA
 - PostgreSQL (ou H2 para testes)
