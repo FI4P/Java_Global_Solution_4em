@@ -1,0 +1,974 @@
+type: collection.insomnia.rest/5.0
+name: FiremotionAPI
+meta:
+  id: wrk_2f78fd8a037548ddbfa9f25b71d32882
+  created: 1748804609884
+  modified: 1748804609884
+collection:
+  - name: Localizacoes
+    meta:
+      id: fld_d4ed2af4dc8047f8893fa547f1897073
+      created: 1748804633750
+      modified: 1748804718703
+      sortKey: -1748804633750
+    children:
+      - url: "{{ _.BASE_URL }}/{{ _.RESOURCE }}"
+        name: Index
+        meta:
+          id: req_c15d65268f97493fbad569ffeb6937e9
+          created: 1748804636617
+          modified: 1748804728346
+          isPrivate: false
+          sortKey: -1748804636617
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_URL }}/{{ _.RESOURCE }}/1"
+        name: Show
+        meta:
+          id: req_0c5ca87d0d854932a6cc84a3d1f91e83
+          created: 1748804744694
+          modified: 1748804746898
+          isPrivate: false
+          sortKey: -1748804636567
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_URL }}/{{ _.RESOURCE }}/1"
+        name: Create
+        meta:
+          id: req_75f08e6037864a7183ef1104cbd4ae19
+          created: 1748804752980
+          modified: 1748804801934
+          isPrivate: false
+          sortKey: -1748804636517
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"longitude": 10,
+            	"latitude": 10,
+            	"regiao": "SUL",
+            	"descricao": "Região Sul"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_URL }}/{{ _.RESOURCE }}/1"
+        name: Update
+        meta:
+          id: req_8f7fa1ddc1ba4b4fb2abc46946ca9613
+          created: 1748804996998
+          modified: 1748805000691
+          isPrivate: false
+          sortKey: -1748804636467
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"longitude": 10,
+            	"latitude": 10,
+            	"regiao": "SUL",
+            	"descricao": "Região Sul"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_URL }}/{{ _.RESOURCE }}/1"
+        name: Delete
+        meta:
+          id: req_e44d6d7086304c359aed4f482efa739d
+          created: 1748805021491
+          modified: 1748805401439
+          isPrivate: false
+          sortKey: -1748804636417
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+    environment:
+      RESOURCE: localizacoes
+  - name: API-DOCS
+    meta:
+      id: fld_7c2696ce02d54d68a67be90b360dc17a
+      created: 1748804859820
+      modified: 1748804898822
+      sortKey: -1748804859820
+    children:
+      - url: "{{ _.BASE_URL }}/swagger-ui/index.html"
+        name: Documentation
+        meta:
+          id: req_38eded34408f4dee8dc1091b253b228a
+          created: 1748804864361
+          modified: 1748804942162
+          isPrivate: false
+          sortKey: -1748804864361
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+    environment:
+      BASE_URL: http://localhost:3000
+  - name: Sensores
+    meta:
+      id: fld_e162e3ffcba140d9837193da62922a33
+      created: 1748805037622
+      modified: 1748805053199
+      sortKey: -1748804633700
+    children:
+      - url: "{{ _.BASE_URL }}/{{ _.RESOURCE }}"
+        name: Index
+        meta:
+          id: req_ee942067ac214ad389f8926d2ef4d47c
+          created: 1748805037625
+          modified: 1748805037625
+          isPrivate: false
+          sortKey: -1748804636617
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_URL }}/{{ _.RESOURCE }}/1"
+        name: Show
+        meta:
+          id: req_f65a81ad70f044cf9ac77577ff430e42
+          created: 1748805037626
+          modified: 1748805037626
+          isPrivate: false
+          sortKey: -1748804636567
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_URL }}/{{ _.RESOURCE }}"
+        name: Create
+        meta:
+          id: req_fc9f10869ef74db2a2c424d7dba5064c
+          created: 1748805037628
+          modified: 1748805155708
+          isPrivate: false
+          sortKey: -1748804636517
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"localizacaoId": 1,
+            	"tipo": "gas",
+            	"descricao": "Região Sul"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_URL }}/{{ _.RESOURCE }}/1"
+        name: Update
+        meta:
+          id: req_5637a8e9d4b84949983149522c9ac700
+          created: 1748805037629
+          modified: 1748805167612
+          isPrivate: false
+          sortKey: -1748804636467
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"localizacaoId": 1,
+            	"tipo": "gas",
+            	"descricao": "Região Sul"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_URL }}/{{ _.RESOURCE }}/1"
+        name: Delete
+        meta:
+          id: req_ef3e163fd14e438aa5359661d13ed3de
+          created: 1748805037630
+          modified: 1748805407140
+          isPrivate: false
+          sortKey: -1748804636417
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+    environment:
+      RESOURCE: sensores
+  - name: Incendios
+    meta:
+      id: fld_cb6dc36429c3477a8f28f5a497024297
+      created: 1748805179065
+      modified: 1748805187596
+      sortKey: -1748804633650
+    children:
+      - url: "{{ _.BASE_URL }}/{{ _.RESOURCE }}"
+        name: Index
+        meta:
+          id: req_a9850467a93c49978b8c941a7b244bbe
+          created: 1748805179066
+          modified: 1748805179066
+          isPrivate: false
+          sortKey: -1748804636617
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_URL }}/{{ _.RESOURCE }}/1"
+        name: Show
+        meta:
+          id: req_a86daf8458a24f6798cb8d68d1e03b9a
+          created: 1748805179068
+          modified: 1748805179068
+          isPrivate: false
+          sortKey: -1748804636567
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_URL }}/{{ _.RESOURCE }}"
+        name: Create
+        meta:
+          id: req_3edad1e9d3d4468fa62234b8eba56676
+          created: 1748805179069
+          modified: 1748805294945
+          isPrivate: false
+          sortKey: -1748804636517
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"localizacaoId": 1,
+            	"intensidade": "alta",
+            	"origem": "Sul",
+            	"status": "ativo"
+            	
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_URL }}/{{ _.RESOURCE }}/1"
+        name: Update
+        meta:
+          id: req_9ac955796d3144e9b29ebbc22fd00407
+          created: 1748805179069
+          modified: 1748805301944
+          isPrivate: false
+          sortKey: -1748804636467
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"localizacaoId": 1,
+            	"intensidade": "alta",
+            	"origem": "Sul",
+            	"status": "ativo"
+            	
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_URL }}/{{ _.RESOURCE }}/1"
+        name: Delete
+        meta:
+          id: req_87ab5673470f4908a925d2ad6153cdd3
+          created: 1748805179070
+          modified: 1748805414102
+          isPrivate: false
+          sortKey: -1748804636417
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+    environment:
+      RESOURCE: incendios
+  - name: Alertas
+    meta:
+      id: fld_5bf32326a62a4aeeaaac312564f5e810
+      created: 1748805310154
+      modified: 1748805326178
+      sortKey: -1748804633600
+    children:
+      - url: "{{ _.BASE_URL }}/{{ _.RESOURCE }}"
+        name: Index
+        meta:
+          id: req_3f31c21fa7244b7995570930699bb623
+          created: 1748805310157
+          modified: 1748805310157
+          isPrivate: false
+          sortKey: -1748804636617
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_URL }}/{{ _.RESOURCE }}/1"
+        name: Show
+        meta:
+          id: req_2293888e66894702b5592b8c8a649958
+          created: 1748805310160
+          modified: 1748805310160
+          isPrivate: false
+          sortKey: -1748804636567
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_URL }}/{{ _.RESOURCE }}"
+        name: Create
+        meta:
+          id: req_6ae593d110c24dcca1d773f369a28d6c
+          created: 1748805310160
+          modified: 1748805372117
+          isPrivate: false
+          sortKey: -1748804636517
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"focoIncendioId": 1,
+            	"sensorId": 1,
+            	"descricao": "Fogo",
+            	"nivelRisco": "alto"
+            	
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_URL }}/{{ _.RESOURCE }}/1"
+        name: Update
+        meta:
+          id: req_066045a6ca34481b9edda0e89edac4e3
+          created: 1748805310161
+          modified: 1748805380080
+          isPrivate: false
+          sortKey: -1748804636467
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"focoIncendioId": 1,
+            	"sensorId": 1,
+            	"descricao": "Fogo",
+            	"nivelRisco": "alto"
+            	
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_URL }}/{{ _.RESOURCE }}/1"
+        name: Delete
+        meta:
+          id: req_9ec97c6822ac4cf6a80be1fcd6446f61
+          created: 1748805310162
+          modified: 1748805394247
+          isPrivate: false
+          sortKey: -1748804636417
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+    environment:
+      RESOURCE: alertas
+  - name: Leituras
+    meta:
+      id: fld_8d2e8a3e4ba7413d8c4262d538df4372
+      created: 1748805427860
+      modified: 1748805442203
+      sortKey: -1748804633550
+    children:
+      - url: "{{ _.BASE_URL }}/{{ _.RESOURCE }}"
+        name: Index
+        meta:
+          id: req_7740ef387a534e2c8975499c4ca36a7d
+          created: 1748805427862
+          modified: 1748805427862
+          isPrivate: false
+          sortKey: -1748804636617
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_URL }}/{{ _.RESOURCE }}/1"
+        name: Show
+        meta:
+          id: req_78e989ca653c4a49a4abe7e987b78619
+          created: 1748805427863
+          modified: 1748805427863
+          isPrivate: false
+          sortKey: -1748804636567
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_URL }}/{{ _.RESOURCE }}"
+        name: Create
+        meta:
+          id: req_26e1e80234bd43bdbb39a431dac2c424
+          created: 1748805427865
+          modified: 1748805467571
+          isPrivate: false
+          sortKey: -1748804636517
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"sensorId": 1,
+            	"valor": 10,
+            	"unidade": "cm"
+            	
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_URL }}/{{ _.RESOURCE }}/1"
+        name: Update
+        meta:
+          id: req_e0f5d326c2c54058b2c9ca68d207f45d
+          created: 1748805427866
+          modified: 1748805427866
+          isPrivate: false
+          sortKey: -1748804636467
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"focoIncendioId": 1,
+            	"sensorId": 1,
+            	"descricao": "Fogo",
+            	"nivelRisco": "alto"
+            	
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_URL }}/{{ _.RESOURCE }}/1"
+        name: Delete
+        meta:
+          id: req_f00f44e8bc1145498bff2cb84165cd1b
+          created: 1748805427867
+          modified: 1748805427867
+          isPrivate: false
+          sortKey: -1748804636417
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+    environment:
+      RESOURCE: leituras
+  - name: Entidades
+    meta:
+      id: fld_abf95e8e8c234f0484ace4a46ffcc574
+      created: 1748805484834
+      modified: 1748805493480
+      sortKey: -1748804633500
+    children:
+      - url: "{{ _.BASE_URL }}/{{ _.RESOURCE }}"
+        name: Index
+        meta:
+          id: req_b735b95b172f473f9e9ab2bcd2696c38
+          created: 1748805484924
+          modified: 1748805484924
+          isPrivate: false
+          sortKey: -1748804636617
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_URL }}/{{ _.RESOURCE }}/1"
+        name: Show
+        meta:
+          id: req_2e8e343995134d5baddda3b32410da10
+          created: 1748805484925
+          modified: 1748805484925
+          isPrivate: false
+          sortKey: -1748804636567
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_URL }}/{{ _.RESOURCE }}"
+        name: Create
+        meta:
+          id: req_36697a21ed674758894c6955b447b109
+          created: 1748805484926
+          modified: 1748805548302
+          isPrivate: false
+          sortKey: -1748804636517
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"nome": "Policia militar",
+            	"tipo": "defesa_civil",
+            	"contato": "13049303403"
+            	
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_URL }}/{{ _.RESOURCE }}/1"
+        name: Update
+        meta:
+          id: req_ee4dca134e8f4f5588cfc46a76a4866c
+          created: 1748805484928
+          modified: 1748805484928
+          isPrivate: false
+          sortKey: -1748804636467
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"focoIncendioId": 1,
+            	"sensorId": 1,
+            	"descricao": "Fogo",
+            	"nivelRisco": "alto"
+            	
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_URL }}/{{ _.RESOURCE }}/1"
+        name: Delete
+        meta:
+          id: req_a2b47589a20245318e46157044bf6dc3
+          created: 1748805484930
+          modified: 1748805484930
+          isPrivate: false
+          sortKey: -1748804636417
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+    environment:
+      RESOURCE: entidades
+  - name: Respostas
+    meta:
+      id: fld_ad614de5250a49aa9b8eb127486554ea
+      created: 1748805581440
+      modified: 1748805680415
+      sortKey: -1748804633450
+    children:
+      - url: "{{ _.BASE_URL }}/{{ _.RESOURCE }}"
+        name: Index
+        meta:
+          id: req_72c4719652db42a49d3c8d2371f55b78
+          created: 1748805581523
+          modified: 1748805581523
+          isPrivate: false
+          sortKey: -1748804636617
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_URL }}/{{ _.RESOURCE }}"
+        name: Create
+        meta:
+          id: req_56d9c9eae6bc4d4aacdea44c00190b6c
+          created: 1748805581525
+          modified: 1748805631844
+          isPrivate: false
+          sortKey: -1748804636517
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"focoIncendioId": 1,
+            	"entidadeId": 1,
+            	"acao": "evacuacao",
+            	"status": "em_andamento"
+            	
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_URL }}/{{ _.RESOURCE }}/1"
+        name: Show
+        meta:
+          id: req_ffc17d1f21af439c9466ac3ff5372faf
+          created: 1748805581525
+          modified: 1748805581525
+          isPrivate: false
+          sortKey: -1748804636567
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_URL }}/{{ _.RESOURCE }}/1"
+        name: Update
+        meta:
+          id: req_9cd48996889843d49fc21254c76c37b8
+          created: 1748805581527
+          modified: 1748805581527
+          isPrivate: false
+          sortKey: -1748804636467
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"focoIncendioId": 1,
+            	"sensorId": 1,
+            	"descricao": "Fogo",
+            	"nivelRisco": "alto"
+            	
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BASE_URL }}/{{ _.RESOURCE }}/1"
+        name: Delete
+        meta:
+          id: req_1c1163015d414ab7ab5e86674622136f
+          created: 1748805581528
+          modified: 1748805581528
+          isPrivate: false
+          sortKey: -1748804636417
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+    environment:
+      RESOURCE: respostas
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_808c54ffc8d183d2fcd529cf395b06f900d377d2
+    created: 1748804609894
+    modified: 1748804609894
+environments:
+  name: Base Environment
+  meta:
+    id: env_808c54ffc8d183d2fcd529cf395b06f900d377d2
+    created: 1748804609892
+    modified: 1748804673643
+    isPrivate: false
+  data:
+    BASE_URL: http://localhost:3000/api/v1
