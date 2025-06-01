@@ -54,5 +54,6 @@ A documentação da API está disponível via Swagger em:
 
 http://localhost:3000/swagger-ui.html
 
-Ou baixe o arquivo do Insomnia disponibilizado: insomnia.json
+Ou baixe o arquivo do Insomnia disponibilizado: insomnia.yaml
+
 
