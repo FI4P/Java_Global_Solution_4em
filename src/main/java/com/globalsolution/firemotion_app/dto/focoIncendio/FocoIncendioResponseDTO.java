@@ -8,5 +8,5 @@ import com.globalsolution.firemotion_app.dto.respostaIncendio.RespostaIncendioRe
 import java.time.LocalDateTime;
 import java.util.List;
 
-public record FocoIncendioResponseDTO(Long id, FocoIncendioIntensidade intensidade, FocoIncendioStatus status, String origem, Long localizacaoId, LocalDateTime createdAt, List<AlertaResponseDTO> alertas, List<RespostaIncendioResponseDTO> focosIncendios) {
+public record FocoIncendioResponseDTO(Long id, FocoIncendioIntensidade intensidade, FocoIncendioStatus status, String origem, Long localizacaoId, LocalDateTime createdAt, List<AlertaResponseDTO> alertas, List<RespostaIncendioResponseDTO> respostas) {
 }
